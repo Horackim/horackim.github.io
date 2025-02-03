@@ -1,0 +1,192 @@
+/* Réinitialisation et styles globaux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f9;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Animation au défilement */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SECTION HERO */
+header.hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background: linear-gradient(135deg, #ff6f61, #f39c12);
+  color: #fff;
+  min-height: 100vh;
+}
+.hero-text {
+  max-width: 45%;
+}
+.hero-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+.hero-text h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+.hero-text p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.cta-btn {
+  background: #fff;
+  color: #f39c12;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+.cta-btn:hover {
+  background: #f4f4f9;
+}
+.hero-image {
+  max-width: 50%;
+  /* Pour que le SVG prenne toute la largeur disponible */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animation SVG pour le graphique dans le hero */
+.graph-line {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: drawLine 2s forwards;
+}
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+.graph-bar {
+  transform-origin: bottom;
+  transform: scaleY(0);
+  animation: growBar 2s forwards;
+  animation-delay: 0.5s;
+}
+@keyframes growBar {
+  to { transform: scaleY(1); }
+}
+
+/* SECTION PROJETS */
+.projects {
+  padding: 50px;
+  text-align: center;
+}
+.projects h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.project-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.project-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.project-card p {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+.project-card a {
+  color: #f39c12;
+  font-weight: bold;
+}
+
+/* SECTION COMPÉTENCES */
+.skills {
+  padding: 50px;
+  background: #fff;
+  text-align: center;
+}
+.skills h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+.skill-bar {
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+}
+.skill-bar span {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+.bar {
+  background: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 20px;
+}
+.progress {
+  background: #4caf50;
+  height: 100%;
+  width: 0;
+  animation: fillProgress 2s forwards;
+}
+@keyframes fillProgress {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* SECTION CONTACT */
+.contact {
+  padding: 50px;
+  text-align: center;
+}
+.contact h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.contact p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+.contact-links a {
+  margin: 0 10px;
+  color: #f39c12;
+  font-weight: bold;
+}
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #333;
+  color: #fff;
+}

@@ -1,18 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<link rel="stylesheet" href="style.css"/>
-<title> Le titre qui apparaitra dans le navigateur </title>
-<meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Analyst - Présentation GitHub</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-<h1> Ici le titre principal </h1>
-<p> Et voilà le texte de la page</p>
-<h2> On peut créer jusqu'à six niveaux de titres en HTML </h2>
-<p> Et voici un autre paragraphe </p>
-<img src= "https://upload.wikimedia.org/wikipedia/fr/e/e4/WildCodeSchool_logo_pink_background_400x220.png">
-<p></p>
-<a href= "http://www.wildcodeschool.com"> titre du lien </a>
-</body> 
+  <!-- SECTION HERO -->
+  <header class="hero">
+    <div class="hero-text animate-on-scroll">
+      <h1>Bonjour, je suis Julien Biville</h1>
+      <h2>Data Analyst &amp; Passionné des Données</h2>
+      <p>
+        Bienvenue sur mon GitHub ! Je transforme les données en insights percutants.
+      </p>
+      <a href="#projects" class="cta-btn">Voir mes projets</a>
+    </div>
+    <div class="hero-image animate-on-scroll">
+      <!-- Illustration SVG agrandie simulant un écran d'ordinateur portable avec graphique animé -->
+      <svg width="500" height="350" viewBox="0 0 500 350">
+        <!-- Écran de l'ordinateur portable -->
+        <rect x="20" y="20" width="460" height="250" rx="10" ry="10" fill="#fff" stroke="#ccc" stroke-width="2"/>
+        <!-- Graphique linéaire animé -->
+        <polyline class="graph-line"
+                  points="50,270 100,200 150,220 200,160 250,180 300,130 350,150 400,100"
+                  fill="none" stroke="#f39c12" stroke-width="4" stroke-linecap="round" />
+        <!-- Quelques barres de données animées -->
+        <rect class="graph-bar" x="70" y="250" width="15" height="20" fill="#f39c12" />
+        <rect class="graph-bar" x="130" y="240" width="15" height="40" fill="#f39c12" />
+        <rect class="graph-bar" x="190" y="260" width="15" height="20" fill="#f39c12" />
+        <rect class="graph-bar" x="250" y="230" width="15" height="50" fill="#f39c12" />
+        <rect class="graph-bar" x="310" y="245" width="15" height="35" fill="#f39c12" />
+      </svg>
+    </div>
+  </header>
+
+  <!-- SECTION PROJETS -->
+  <section id="projects" class="projects">
+    <h2 class="animate-on-scroll">Mes Projets GitHub</h2>
+    <div class="project-list">
+      <div class="project-card animate-on-scroll">
+        <h3>Analyse des Ventes</h3>
+        <p>
+          Exploration et visualisation des données de ventes afin de dégager des tendances.
+        </p>
+        <a href="https://github.com/votre-compte/projet-ventes" target="_blank">
+          Voir sur GitHub
+        </a>
+      </div>
+      <div class="project-card animate-on-scroll">
+        <h3>Prévisions Économiques</h3>
+        <p>
+          Modèles prédictifs basés sur l’analyse de données économiques.
+        </p>
+        <a href="https://github.com/votre-compte/projet-economie" target="_blank">
+          Voir sur GitHub
+        </a>
+      </div>
+      <div class="project-card animate-on-scroll">
+        <h3>Dashboards Interactifs</h3>
+        <p>
+          Création de dashboards dynamiques pour visualiser les insights de données.
+        </p>
+        <a href="https://github.com/votre-compte/projet-dataviz" target="_blank">
+          Voir sur GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION COMPÉTENCES -->
+  <section id="skills" class="skills">
+    <h2 class="animate-on-scroll">Mes Compétences</h2>
+    <div class="skill-bar animate-on-scroll">
+      <span>Analyse de Données</span>
+      <div class="bar">
+        <div class="progress" style="width: 85%;"></div>
+      </div>
+    </div>
+    <div class="skill-bar animate-on-scroll">
+      <span>Machine Learning</span>
+      <div class="bar">
+        <div class="progress" style="width: 75%;"></div>
+      </div>
+    </div>
+    <div class="skill-bar animate-on-scroll">
+      <span>Data Visualisation</span>
+      <div class="bar">
+        <div class="progress" style="width: 90%;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CONTACT -->
+  <section id="contact" class="contact">
+    <h2 class="animate-on-scroll">Contactez-moi</h2>
+    <p class="animate-on-scroll">
+      Retrouvons-nous sur LinkedIn ou contactez-moi par email.
+    </p>
+    <div class="contact-links animate-on-scroll">
+      <a href="https://www.linkedin.com/in/julienbiville/" target="_blank">LinkedIn</a>
+      <a href="mailto:jbiville84@gmail.com">Email</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Julien Biville - Data Analyst</p>
+  </footer>
+
+  <!-- SCRIPT POUR L'ANIMATION AU DÉFILEMENT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      document.querySelectorAll('.animate-on-scroll').forEach(elem => {
+        observer.observe(elem);
+      });
+    });
+  </script>
+</body>
 </html>
